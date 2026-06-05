@@ -1,0 +1,1180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>মাশাআল্লাহ ফ্যাশন হাউস — Children's Clothing</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hind+Siliguri:wght@300;400;500;600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --saffron:#E8901A;
+  --saffron-light:#F5B84C;
+  --crimson:#C0392B;
+  --crimson-light:#E85444;
+  --ivory:#FDF6ED;
+  --warm-white:#FFFAF3;
+  --cream:#F5EBD8;
+  --deep-green:#1A5C3A;
+  --leaf-green:#2E8B57;
+  --gold:#D4A017;
+  --gold-light:#F0C84A;
+  --navy:#1C2B4A;
+  --text:#2A1F0E;
+  --text-muted:#7A6040;
+  --border:rgba(212,160,23,0.2);
+  --shadow:rgba(42,31,14,0.12);
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'Josefin Sans',sans-serif;background:var(--ivory);color:var(--text);overflow-x:hidden;cursor:default;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px;}
+
+/* ── BENGALI MOTIF SVG PATTERN (background) ── */
+.motif-bg{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='0.6' opacity='0.18'%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Cpath d='M30 18 L34 26 L30 22 L26 26Z'/%3E%3Cpath d='M42 30 L34 34 L38 30 L34 26Z'/%3E%3Cpath d='M30 42 L26 34 L30 38 L34 34Z'/%3E%3Cpath d='M18 30 L26 26 L22 30 L26 34Z'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Cline x1='0' y1='0' x2='60' y2='60' stroke-width='0.3'/%3E%3Cline x1='60' y1='0' x2='0' y2='60' stroke-width='0.3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── ANNOUNCE BAR ── */
+.announce{
+  background:linear-gradient(90deg,var(--crimson),var(--saffron),var(--crimson));
+  background-size:200% 100%;
+  animation:gradShift 4s linear infinite;
+  color:white;text-align:center;padding:10px 16px;
+  font-size:12px;letter-spacing:0.1em;font-weight:400;
+  font-family:'Josefin Sans',sans-serif;
+}
+@keyframes gradShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+/* ── HEADER ── */
+header{
+  background:var(--warm-white);
+  border-bottom:2px solid var(--border);
+  position:sticky;top:0;z-index:200;
+  box-shadow:0 2px 20px var(--shadow);
+}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:76px;}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;}
+.logo-icon{width:44px;height:44px;position:relative;}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-bn{font-family:'Hind Siliguri',sans-serif;font-size:15px;font-weight:600;color:var(--crimson);letter-spacing:0.02em;}
+.logo-en{font-family:'Lora',serif;font-size:11px;font-weight:400;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;}
+nav{display:flex;gap:32px;}
+nav a{
+  font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--text);text-decoration:none;cursor:pointer;
+  padding:6px 0;position:relative;transition:color 0.25s;
+}
+nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--saffron);transition:width 0.3s;}
+nav a:hover,nav a.active{color:var(--saffron);}
+nav a:hover::after,nav a.active::after{width:100%;}
+.header-actions{display:flex;gap:16px;align-items:center;}
+.icon-btn{
+  background:none;border:none;cursor:pointer;
+  color:var(--text);transition:color 0.2s,transform 0.2s;
+  font-size:18px;padding:6px;display:flex;align-items:center;gap:6px;
+  font-family:'Josefin Sans',sans-serif;font-size:12px;
+}
+.icon-btn:hover{color:var(--saffron);transform:scale(1.1);}
+.cart-pill{
+  background:var(--crimson);color:white;
+  padding:7px 16px;border-radius:2px;
+  font-size:11px;font-weight:600;letter-spacing:0.1em;
+  cursor:pointer;border:none;font-family:'Josefin Sans',sans-serif;
+  transition:background 0.2s,transform 0.15s;display:flex;align-items:center;gap:7px;
+}
+.cart-pill:hover{background:var(--saffron);transform:translateY(-1px);}
+.cart-count{background:white;color:var(--crimson);border-radius:50%;width:17px;height:17px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;}
+
+/* ── HERO ── */
+.hero{
+  min-height:600px;display:grid;grid-template-columns:1fr 1fr;
+  background:var(--cream);
+  overflow:hidden;position:relative;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23E8901A' stroke-width='0.5' opacity='0.1'%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3Cpath d='M40 24 L44 32 L40 28 L36 32Z'/%3E%3Cpath d='M56 40 L48 44 L52 40 L48 36Z'/%3E%3Cpath d='M40 56 L36 48 L40 52 L44 48Z'/%3E%3Cpath d='M24 40 L32 36 L28 40 L32 44Z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;
+}
+.hero-text{
+  padding:80px 60px 80px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;
+  animation:fadeInLeft 0.9s ease both;
+}
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--saffron);margin-bottom:20px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'◆';font-size:7px;}
+.hero-title-bn{
+  font-family:'Hind Siliguri',sans-serif;
+  font-size:20px;font-weight:500;
+  color:var(--text-muted);margin-bottom:6px;
+  letter-spacing:0.04em;
+}
+.hero-title{
+  font-family:'Lora',serif;
+  font-size:52px;line-height:1.1;font-weight:700;
+  color:var(--navy);margin-bottom:8px;
+}
+.hero-title em{font-style:italic;color:var(--saffron);}
+.hero-subtitle{
+  font-size:14px;color:var(--text-muted);line-height:1.8;
+  max-width:360px;margin-bottom:36px;font-weight:300;
+  border-left:3px solid var(--saffron-light);padding-left:16px;
+}
+.hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--crimson);color:white;border:none;
+  padding:14px 32px;font-size:11px;letter-spacing:0.14em;
+  text-transform:uppercase;font-weight:600;cursor:pointer;
+  font-family:'Josefin Sans',sans-serif;
+  transition:all 0.25s;position:relative;overflow:hidden;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--saffron);transform:translateX(-100%);transition:transform 0.3s;}
+.btn-primary:hover::before{transform:translateX(0);}
+.btn-primary span{position:relative;z-index:1;}
+.btn-outline{
+  background:transparent;color:var(--navy);
+  border:2px solid var(--gold);
+  padding:13px 32px;font-size:11px;letter-spacing:0.14em;
+  text-transform:uppercase;font-weight:600;cursor:pointer;
+  font-family:'Josefin Sans',sans-serif;transition:all 0.25s;
+}
+.btn-outline:hover{background:var(--navy);color:white;border-color:var(--navy);}
+.hero-visual{
+  position:relative;overflow:hidden;
+  animation:fadeInRight 0.9s 0.2s ease both;
+}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+
+/* floating elements */
+.float-1{animation:float1 3.5s ease-in-out infinite;}
+.float-2{animation:float2 4s ease-in-out infinite;}
+.float-3{animation:float3 2.8s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-8px) rotate(5deg);}}
+@keyframes float3{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+
+/* butterfly wing flutter */
+.wing-r{animation:flutter 0.4s ease-in-out infinite alternate;}
+.wing-l{animation:flutter 0.4s 0.2s ease-in-out infinite alternate;}
+@keyframes flutter{from{transform:scaleX(1);}to{transform:scaleX(0.6);}}
+
+/* spinning decoration */
+.spin-slow{animation:spinSlow 20s linear infinite;}
+@keyframes spinSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ── CATEGORY NAV STRIP ── */
+.cat-nav{background:var(--warm-white);border-bottom:1px solid var(--border);}
+.cat-nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;gap:0;overflow-x:auto;}
+.cat-tab{
+  padding:18px 24px;font-size:11px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-muted);cursor:pointer;
+  border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;
+}
+.cat-tab:hover{color:var(--navy);}
+.cat-tab.active{color:var(--saffron);border-bottom-color:var(--saffron);}
+
+/* ── DECORATIVE DIVIDER ── */
+.divider{
+  display:flex;align-items:center;gap:16px;
+  max-width:1200px;margin:0 auto;padding:0 32px;
+}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.divider-motif{color:var(--gold);font-size:14px;letter-spacing:6px;}
+
+/* ── SECTIONS ── */
+section{max-width:1200px;margin:0 auto;padding:64px 32px;}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px;}
+.section-title{font-family:'Lora',serif;font-size:32px;font-weight:700;color:var(--navy);}
+.section-title em{font-style:italic;color:var(--saffron);}
+.section-title-bn{font-family:'Hind Siliguri',sans-serif;font-size:13px;font-weight:400;color:var(--text-muted);display:block;margin-bottom:4px;}
+.section-link{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);text-decoration:none;cursor:pointer;border-bottom:1.5px solid var(--saffron-light);padding-bottom:2px;transition:opacity 0.2s;}
+.section-link:hover{opacity:0.7;}
+
+/* ── PRODUCT GRID ── */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.product-card{cursor:pointer;position:relative;}
+.product-card:hover .product-img-inner{transform:scale(1.04);}
+.product-card:hover .quick-add{opacity:1;transform:translateY(0);}
+.product-img{
+  aspect-ratio:3/4;overflow:hidden;margin-bottom:14px;
+  position:relative;background:var(--cream);
+  border:1px solid var(--border);
+}
+.product-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.5s ease;}
+.prod-badge{
+  position:absolute;top:10px;left:10px;
+  background:var(--crimson);color:white;
+  font-size:9px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;padding:4px 10px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,0 100%);
+}
+.prod-badge.sale{background:var(--deep-green);}
+.prod-badge.new{background:var(--saffron);}
+.quick-add{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(28,43,74,0.92);color:white;
+  padding:12px;text-align:center;
+  font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  opacity:0;transform:translateY(8px);transition:all 0.3s;cursor:pointer;
+}
+.product-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.product-meta{font-size:11px;color:var(--text-muted);margin-bottom:6px;letter-spacing:0.06em;}
+.product-price{font-size:15px;font-weight:600;color:var(--navy);}
+.product-price .old{text-decoration:line-through;color:var(--text-muted);font-size:12px;margin-right:6px;}
+.swatches{display:flex;gap:5px;margin-top:8px;}
+.swatch{width:13px;height:13px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;transition:transform 0.15s;}
+.swatch:hover{transform:scale(1.3);border-color:var(--text-muted);}
+
+/* ── FEATURE STRIP ── */
+.feature-strip{background:linear-gradient(135deg,var(--navy),#2A3F6A);}
+.feature-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);}
+.feature-item{
+  padding:28px 24px;display:flex;align-items:center;gap:14px;
+  border-right:1px solid rgba(255,255,255,0.08);
+  transition:background 0.2s;cursor:default;
+}
+.feature-item:hover{background:rgba(255,255,255,0.04);}
+.feature-item:last-child{border-right:none;}
+.feature-icon{font-size:26px;transition:transform 0.3s;}
+.feature-item:hover .feature-icon{transform:scale(1.2) rotate(5deg);}
+.feature-text h4{font-size:12px;font-weight:600;letter-spacing:0.06em;margin-bottom:3px;color:white;}
+.feature-text p{font-size:11px;color:rgba(255,255,255,0.5);font-weight:300;}
+
+/* ── CATEGORY CARDS ── */
+.category-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;}
+.cat-card{position:relative;overflow:hidden;cursor:pointer;}
+.cat-card-tall{aspect-ratio:2/3;}
+.cat-card-sq{aspect-ratio:1/1;}
+.cat-card-bg{
+  width:100%;height:100%;display:flex;align-items:flex-end;
+  padding:24px;position:relative;transition:transform 0.5s ease;
+}
+.cat-card:hover .cat-card-bg{transform:scale(1.03);}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,43,74,0.75) 0%,rgba(28,43,74,0.1) 60%,transparent 100%);}
+.cat-info{position:relative;z-index:2;color:white;}
+.cat-info h3{font-family:'Lora',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
+.cat-info p{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.75;}
+.cat-right{display:flex;flex-direction:column;gap:16px;}
+
+/* border glow on hover */
+.cat-card::after{
+  content:'';position:absolute;inset:0;
+  border:2px solid transparent;
+  transition:border-color 0.3s;pointer-events:none;z-index:10;
+}
+.cat-card:hover::after{border-color:var(--gold);}
+
+/* ── TESTIMONIALS ── */
+.testimonials-bg{background:var(--cream);padding:64px 0;}
+.testimonials-inner{max-width:1200px;margin:0 auto;padding:0 32px;}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.testi-card{
+  background:white;padding:28px;
+  border:1px solid var(--border);
+  border-top:3px solid var(--saffron);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px var(--shadow);}
+.testi-stars{color:var(--saffron);font-size:13px;margin-bottom:12px;letter-spacing:3px;}
+.testi-text{font-family:'Lora',serif;font-style:italic;font-size:14px;line-height:1.7;color:var(--text);margin-bottom:16px;}
+.testi-author{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);}
+
+/* ── ABOUT STRIP ── */
+.about-strip{background:linear-gradient(135deg,#1A5C3A 0%,#2E8B57 100%);color:white;position:relative;overflow:hidden;}
+.about-strip::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='white' stroke-width='0.5' opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='14'/%3E%3Ccircle cx='30' cy='30' r='6'/%3E%3Cpath d='M30 16L33 23L30 19L27 23Z'/%3E%3Cpath d='M44 30L37 33L41 30L37 27Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.about-inner{max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+.about-text h2{font-family:'Lora',serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+.about-text h2 em{font-style:italic;color:var(--gold-light);}
+.about-title-bn{font-family:'Hind Siliguri',sans-serif;font-size:15px;font-weight:400;opacity:0.75;margin-bottom:20px;display:block;}
+.about-text p{font-size:14px;opacity:0.85;line-height:1.85;margin-bottom:14px;font-weight:300;}
+.about-btn{
+  background:var(--gold);color:var(--navy);border:none;
+  padding:13px 30px;font-size:11px;letter-spacing:0.14em;
+  text-transform:uppercase;font-weight:700;cursor:pointer;
+  font-family:'Josefin Sans',sans-serif;margin-top:8px;
+  transition:all 0.25s;
+}
+.about-btn:hover{background:white;}
+.about-values{display:flex;flex-direction:column;gap:20px;}
+.about-value{display:flex;gap:18px;align-items:flex-start;}
+.about-value-icon{
+  width:46px;height:46px;
+  background:rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;border:1px solid rgba(255,255,255,0.2);
+  transition:background 0.3s,transform 0.3s;cursor:default;
+}
+.about-value:hover .about-value-icon{background:rgba(255,255,255,0.22);transform:rotate(5deg);}
+.about-value h4{font-size:13px;font-weight:600;margin-bottom:4px;color:var(--gold-light);}
+.about-value p{font-size:12px;opacity:0.7;font-weight:300;line-height:1.6;}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:var(--navy);position:relative;overflow:hidden;}
+.newsletter::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23D4A017' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='%23D4A017' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='50' cy='50' r='8' fill='none' stroke='%23D4A017' stroke-width='0.5' opacity='0.06'/%3E%3C/svg%3E");
+}
+.newsletter-inner{max-width:600px;margin:0 auto;padding:72px 32px;text-align:center;position:relative;z-index:1;}
+.nl-ornament{color:var(--gold);font-size:24px;letter-spacing:12px;margin-bottom:16px;display:block;}
+.newsletter h2{font-family:'Lora',serif;font-size:34px;color:white;margin-bottom:8px;}
+.newsletter h2 em{color:var(--saffron-light);font-style:italic;}
+.newsletter-bn{font-family:'Hind Siliguri',sans-serif;font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:28px;}
+.nl-form{display:flex;gap:0;max-width:420px;margin:0 auto;}
+.nl-input{
+  flex:1;padding:14px 18px;
+  border:1.5px solid rgba(212,160,23,0.4);
+  border-right:none;
+  background:rgba(255,255,255,0.06);
+  font-size:13px;font-family:'Josefin Sans',sans-serif;
+  color:white;outline:none;transition:border-color 0.2s;
+}
+.nl-input::placeholder{color:rgba(255,255,255,0.35);}
+.nl-input:focus{border-color:var(--gold);}
+.nl-btn{
+  background:var(--saffron);color:white;border:none;
+  padding:14px 22px;font-size:10px;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;
+  font-family:'Josefin Sans',sans-serif;transition:background 0.2s;
+  white-space:nowrap;
+}
+.nl-btn:hover{background:var(--crimson);}
+
+/* ── FOOTER ── */
+footer{background:var(--text);color:white;}
+.footer-inner{max-width:1200px;margin:0 auto;padding:60px 32px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.footer-brand-name{font-family:'Hind Siliguri',sans-serif;font-size:20px;font-weight:600;color:var(--saffron-light);display:block;margin-bottom:4px;}
+.footer-brand-sub{font-family:'Lora',serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;display:block;}
+.footer-brand p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.8;font-weight:300;margin-bottom:16px;}
+.footer-social{display:flex;gap:10px;}
+.social-btn{
+  width:32px;height:32px;border:1px solid rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;cursor:pointer;color:rgba(255,255,255,0.55);
+  transition:all 0.2s;
+}
+.social-btn:hover{background:var(--saffron);border-color:var(--saffron);color:white;}
+.footer-col h5{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.footer-col a{display:block;font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:9px;cursor:pointer;transition:color 0.2s;}
+.footer-col a:hover{color:var(--saffron-light);}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;padding:18px 32px;
+  border-top:1px solid rgba(255,255,255,0.07);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.3);}
+
+/* ── STICKER / FLOATING BADGES ── */
+.sticker{
+  position:fixed;z-index:150;pointer-events:none;
+  animation:stickerFloat 5s ease-in-out infinite;
+}
+.sticker-1{bottom:120px;right:24px;animation-delay:0s;}
+.sticker-2{bottom:200px;right:24px;animation-delay:1.5s;pointer-events:all;}
+@keyframes stickerFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-8px) rotate(3deg);}}
+.wa-btn{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  cursor:pointer;pointer-events:all;
+  transition:transform 0.2s;text-decoration:none;
+}
+.wa-btn:hover{transform:scale(1.1);}
+
+/* ── PAGE TRANSITIONS ── */
+.fade-in{animation:fadeIn 0.6s ease both;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── SCROLL REVEAL (JS-driven) ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── SHIMMER on product images ── */
+@keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-visual{min-height:320px;}
+  .hero-text{padding:48px 32px;}
+  .hero-title{font-size:36px;}
+  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .category-grid{grid-template-columns:1fr;}
+  .feature-strip-inner{grid-template-columns:repeat(2,1fr);}
+  .about-inner{grid-template-columns:1fr;gap:40px;}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:32px;}
+  nav{display:none;}
+  .testimonial-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOATING BTN -->
+<a class="wa-btn sticker sticker-2" href="https://wa.me/8801909165533" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">✦ বিশেষ অফার — ৳২,৫০০-এর উপরে অর্ডারে ফ্রি ডেলিভারি · নতুন কালেকশন প্রতি শুক্রবার ✦</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <svg class="logo-icon" viewBox="0 0 44 44">
+        <!-- Decorative Bengali-style logo mark -->
+        <circle cx="22" cy="22" r="20" fill="none" stroke="#E8901A" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="14" fill="none" stroke="#E8901A" stroke-width="0.8" opacity="0.5"/>
+        <!-- dress silhouette -->
+        <path d="M17 16 Q22 12 27 16 L29 34 Q22 37 15 34Z" fill="#C0392B"/>
+        <path d="M17 16 L14 20 L17 22" stroke="#C0392B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M27 16 L30 20 L27 22" stroke="#C0392B" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="22" cy="12" r="4" fill="#F5B84C"/>
+        <!-- corner motifs -->
+        <path d="M4 22 L8 18 L8 26Z" fill="#E8901A" opacity="0.4"/>
+        <path d="M40 22 L36 18 L36 26Z" fill="#E8901A" opacity="0.4"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-bn">মাশাআল্লাহ ফ্যাশন হাউস</span>
+        <span class="logo-en">Mashallah Fashion House</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#" class="active">নতুন</a>
+      <a href="#">মেয়ে</a>
+      <a href="#">ছেলে</a>
+      <a href="#">শিশু</a>
+      <a href="#">সেট</a>
+      <a href="#">আমাদের সম্পর্কে</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" title="Search">🔍</button>
+      <button class="icon-btn" title="Wishlist">🤍</button>
+      <button class="cart-pill">🛍️ কার্ট <span class="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">গ্রীষ্মকালীন সংগ্রহ ২০২৬</p>
+    <p class="hero-title-bn">শিশুর পোশাক, মায়ের পছন্দ</p>
+    <h1 class="hero-title">Dressed for<br/>Every <em>Little</em><br/>Moment</h1>
+    <p class="hero-subtitle">আরামদায়ক, টেকসই এবং সুন্দর পোশাক — আপনার ছোট্ট সোনামণির জন্য। Dhaka থেকে সারা বাংলাদেশে ডেলিভারি।</p>
+    <div class="hero-ctas">
+      <button class="btn-primary"><span>এখনই কিনুন</span></button>
+      <button class="btn-outline">সব দেখুন</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg viewBox="0 0 520 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+      <defs>
+        <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F5EBD8"/>
+          <stop offset="50%" stop-color="#FAD97A" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#F5C84A" stop-opacity="0.15"/>
+        </linearGradient>
+        <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2E8B57"/>
+          <stop offset="100%" stop-color="#1A5C3A"/>
+        </linearGradient>
+      </defs>
+      <rect width="520" height="600" fill="url(#bgG)"/>
+
+      <!-- Bengali-style border motifs -->
+      <g opacity="0.2">
+        <path d="M0 0 L40 0 L40 4 L4 4 L4 40 L0 40Z" fill="#E8901A"/>
+        <path d="M520 0 L480 0 L480 4 L516 4 L516 40 L520 40Z" fill="#E8901A"/>
+        <path d="M0 600 L40 600 L40 596 L4 596 L4 560 L0 560Z" fill="#E8901A"/>
+        <path d="M520 600 L480 600 L480 596 L516 596 L516 560 L520 560Z" fill="#E8901A"/>
+        <!-- top decorative row -->
+        <g fill="#D4A017">
+          <polygon points="60,0 70,12 80,0"/>
+          <polygon points="120,0 130,12 140,0"/>
+          <polygon points="180,0 190,12 200,0"/>
+          <polygon points="240,0 250,12 260,0"/>
+          <polygon points="300,0 310,12 320,0"/>
+          <polygon points="360,0 370,12 380,0"/>
+          <polygon points="420,0 430,12 440,0"/>
+        </g>
+      </g>
+
+      <!-- Sun with rays -->
+      <g class="float-3" style="transform-origin:420px 90px;">
+        <circle cx="420" cy="90" r="40" fill="#FAD97A" opacity="0.25"/>
+        <circle cx="420" cy="90" r="28" fill="#F5C840" opacity="0.6"/>
+        <circle cx="420" cy="90" r="20" fill="#E8901A" opacity="0.7"/>
+        <!-- rays -->
+        <g stroke="#FAD97A" stroke-width="2" opacity="0.5">
+          <line x1="420" y1="50" x2="420" y2="44"/>
+          <line x1="420" y1="130" x2="420" y2="136"/>
+          <line x1="380" y1="90" x2="374" y2="90"/>
+          <line x1="460" y1="90" x2="466" y2="90"/>
+          <line x1="392" y1="62" x2="388" y2="58"/>
+          <line x1="448" y1="62" x2="452" y2="58"/>
+          <line x1="392" y1="118" x2="388" y2="122"/>
+          <line x1="448" y1="118" x2="452" y2="122"/>
+        </g>
+      </g>
+
+      <!-- Clouds -->
+      <g opacity="0.8">
+        <ellipse class="float-1" cx="90" cy="80" rx="52" ry="26" fill="white"/>
+        <ellipse class="float-1" cx="120" cy="66" rx="36" ry="28" fill="white"/>
+        <ellipse class="float-1" cx="62" cy="74" rx="28" ry="18" fill="white"/>
+        <ellipse class="float-2" cx="280" cy="50" rx="40" ry="20" fill="white" opacity="0.6"/>
+        <ellipse class="float-2" cx="310" cy="40" rx="26" ry="20" fill="white" opacity="0.6"/>
+      </g>
+
+      <!-- Ground -->
+      <ellipse cx="260" cy="560" rx="320" ry="85" fill="url(#groundG)"/>
+      <ellipse cx="260" cy="575" rx="340" ry="70" fill="#1A5C3A"/>
+
+      <!-- Decorative Bengali lotus motif on ground -->
+      <g transform="translate(260,480)" opacity="0.15">
+        <circle cx="0" cy="0" r="40" fill="none" stroke="#FAD97A" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="25" fill="none" stroke="#FAD97A" stroke-width="1"/>
+        <path d="M0,-40 L5,-28 L0,-32 L-5,-28Z" fill="#FAD97A"/>
+        <path d="M40,0 L28,5 L32,0 L28,-5Z" fill="#FAD97A"/>
+        <path d="M0,40 L-5,28 L0,32 L5,28Z" fill="#FAD97A"/>
+        <path d="M-40,0 L-28,-5 L-32,0 L-28,5Z" fill="#FAD97A"/>
+      </g>
+
+      <!-- Tree with Bengali-style canopy -->
+      <rect x="380" y="340" width="16" height="140" rx="5" fill="#5A3D20"/>
+      <ellipse cx="388" cy="300" rx="52" ry="64" fill="#2E8B57"/>
+      <ellipse cx="362" cy="330" rx="36" ry="50" fill="#3A9E68"/>
+      <ellipse cx="412" cy="325" rx="38" ry="52" fill="#267A4A"/>
+      <!-- leaf dots -->
+      <g fill="#FAD97A" opacity="0.3">
+        <circle cx="375" cy="285" r="4"/><circle cx="400" cy="275" r="3"/>
+        <circle cx="385" cy="260" r="5"/><circle cx="365" cy="305" r="3"/>
+      </g>
+
+      <!-- Flowers left -->
+      <g class="float-2">
+        <circle cx="55" cy="470" r="10" fill="#E8901A"/>
+        <circle cx="55" cy="470" r="5" fill="#FAD97A"/>
+        <rect x="53" y="479" width="4" height="24" rx="2" fill="#2E8B57"/>
+        <ellipse cx="47" cy="476" rx="8" ry="4" fill="#E8901A" opacity="0.6" transform="rotate(-30 47 476)"/>
+        <ellipse cx="63" cy="476" rx="8" ry="4" fill="#C0392B" opacity="0.6" transform="rotate(30 63 476)"/>
+      </g>
+      <g class="float-1">
+        <circle cx="90" cy="490" r="7" fill="#F5B84C"/>
+        <circle cx="90" cy="490" r="3" fill="white"/>
+        <rect x="88" y="497" width="3" height="18" rx="1.5" fill="#2E8B57"/>
+      </g>
+
+      <!-- Flowers right -->
+      <g class="float-1">
+        <circle cx="440" cy="460" r="9" fill="#C0392B"/>
+        <circle cx="440" cy="460" r="4" fill="#FAD97A"/>
+        <rect x="438" y="469" width="4" height="22" rx="2" fill="#2E8B57"/>
+      </g>
+      <g class="float-3">
+        <circle cx="470" cy="478" r="7" fill="#E8901A" opacity="0.8"/>
+        <circle cx="470" cy="478" r="3" fill="white"/>
+        <rect x="468" y="485" width="3" height="20" rx="1.5" fill="#2E8B57"/>
+      </g>
+
+      <!-- Butterfly 1 -->
+      <g class="float-2" transform="translate(195,165) rotate(-15)">
+        <ellipse class="wing-r" cx="14" cy="0" rx="14" ry="9" fill="#E8901A" opacity="0.85"/>
+        <ellipse class="wing-l" cx="-14" cy="0" rx="14" ry="9" fill="#FAD97A" opacity="0.85"/>
+        <ellipse class="wing-r" cx="10" cy="10" rx="9" ry="5" fill="#C0392B" opacity="0.7"/>
+        <ellipse class="wing-l" cx="-10" cy="10" rx="9" ry="5" fill="#D4714A" opacity="0.7"/>
+        <ellipse cx="0" cy="4" rx="2.5" ry="10" fill="#2A1F0E"/>
+        <line x1="-3" y1="-3" x2="-10" y2="-14" stroke="#2A1F0E" stroke-width="1"/>
+        <line x1="3" y1="-3" x2="10" y2="-14" stroke="#2A1F0E" stroke-width="1"/>
+      </g>
+
+      <!-- Butterfly 2 (smaller) -->
+      <g class="float-1" transform="translate(310,200) rotate(10)">
+        <ellipse class="wing-l" cx="10" cy="0" rx="10" ry="6" fill="#F5B84C" opacity="0.8"/>
+        <ellipse class="wing-r" cx="-10" cy="0" rx="10" ry="6" fill="#E8901A" opacity="0.8"/>
+        <ellipse cx="0" cy="3" rx="2" ry="7" fill="#2A1F0E"/>
+      </g>
+
+      <!-- CHILD FIGURE 1 — Girl in Salwar Kameez style -->
+      <g transform="translate(115,185)">
+        <!-- Kameez body -->
+        <path d="M30 95 Q8 108 6 170 L56 170 Q54 108 30 95Z" fill="#C0392B"/>
+        <!-- Kameez yoke -->
+        <path d="M18 90 Q30 85 42 90 L44 110 L16 110Z" fill="#E85444"/>
+        <!-- Embroidery dots on yoke -->
+        <g fill="#FAD97A" opacity="0.9">
+          <circle cx="25" cy="98" r="2"/><circle cx="30" cy="95" r="2"/><circle cx="35" cy="98" r="2"/>
+          <circle cx="22" cy="104" r="1.5"/><circle cx="38" cy="104" r="1.5"/>
+        </g>
+        <!-- Dupatta -->
+        <path d="M8 100 Q-5 90 -8 120 L2 125 Q5 100 14 105Z" fill="#E8901A" opacity="0.75"/>
+        <!-- Salwar leg line -->
+        <line x1="22" y1="168" x2="20" y2="210" stroke="#8B1E1E" stroke-width="8" stroke-linecap="round"/>
+        <line x1="38" y1="168" x2="40" y2="210" stroke="#8B1E1E" stroke-width="8" stroke-linecap="round"/>
+        <!-- Arms -->
+        <path d="M18 100 Q0 118 6 142" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M42 100 Q60 118 54 142" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <!-- Hand — holding balloon string -->
+        <line x1="54" y1="132" x2="72" y2="28" stroke="#2A1F0E" stroke-width="1.5"/>
+        <!-- Balloon -->
+        <g class="float-3">
+          <circle cx="72" cy="20" r="20" fill="#E8901A"/>
+          <ellipse cx="66" cy="14" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-20 66 14)"/>
+          <line x1="72" y1="40" x2="72" y2="44" stroke="#2A1F0E" stroke-width="1.5"/>
+          <path d="M70 40 Q72 44 74 40" stroke="#2A1F0E" stroke-width="1" fill="none"/>
+        </g>
+        <!-- Head -->
+        <circle cx="30" cy="66" r="28" fill="#FADADD"/>
+        <!-- Hair with hijab-style -->
+        <path d="M5 62 Q30 32 55 62 Q55 44 30 38 Q5 44 5 62Z" fill="#3D2910"/>
+        <path d="M5 62 Q0 75 8 85 Q15 90 22 92" stroke="#3D2910" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <!-- Eyes -->
+        <circle cx="22" cy="64" r="4" fill="#2A1F0E"/>
+        <circle cx="38" cy="64" r="4" fill="#2A1F0E"/>
+        <circle cx="23.5" cy="62" r="1.8" fill="white"/>
+        <circle cx="39.5" cy="62" r="1.8" fill="white"/>
+        <!-- Lashes -->
+        <line x1="20" y1="60" x2="18" y2="57" stroke="#2A1F0E" stroke-width="1"/>
+        <line x1="23" y1="59" x2="22" y2="56" stroke="#2A1F0E" stroke-width="1"/>
+        <line x1="36" y1="59" x2="35" y2="56" stroke="#2A1F0E" stroke-width="1"/>
+        <line x1="40" y1="60" x2="42" y2="57" stroke="#2A1F0E" stroke-width="1"/>
+        <!-- Smile -->
+        <path d="M22 74 Q30 82 38 74" stroke="#C0392B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Cheeks -->
+        <circle cx="16" cy="73" r="7" fill="#F4CABB" opacity="0.55"/>
+        <circle cx="44" cy="73" r="7" fill="#F4CABB" opacity="0.55"/>
+        <!-- Nose dot -->
+        <circle cx="30" cy="70" r="2" fill="#F4CABB" opacity="0.8"/>
+        <!-- Earring -->
+        <circle cx="5" cy="72" r="3" fill="#D4A017"/>
+      </g>
+
+      <!-- CHILD FIGURE 2 — Boy in Panjabi style -->
+      <g transform="translate(270,198)">
+        <!-- Panjabi body -->
+        <rect x="16" y="88" width="60" height="95" rx="6" fill="#1C2B4A"/>
+        <!-- Collar -->
+        <rect x="36" y="88" width="20" height="16" rx="3" fill="#2A3F6A"/>
+        <!-- Embroidery on collar -->
+        <g fill="#D4A017" opacity="0.8">
+          <rect x="38" y="90" width="3" height="3"/>
+          <rect x="43" y="90" width="3" height="3"/>
+          <rect x="48" y="90" width="3" height="3"/>
+        </g>
+        <!-- Pajama -->
+        <line x1="32" y1="183" x2="28" y2="225" stroke="#0D1A30" stroke-width="10" stroke-linecap="round"/>
+        <line x1="52" y1="183" x2="56" y2="225" stroke="#0D1A30" stroke-width="10" stroke-linecap="round"/>
+        <!-- Arms -->
+        <path d="M20 100 Q4 118 10 144" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M72 100 Q88 118 82 144" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <!-- Topi (cap) -->
+        <ellipse cx="46" cy="54" rx="22" ry="8" fill="#2A3F6A"/>
+        <!-- Head -->
+        <circle cx="46" cy="64" r="26" fill="#FADADD"/>
+        <!-- Hair -->
+        <path d="M24 58 Q46 38 68 58 Q68 44 46 38 Q24 44 24 58Z" fill="#2A1F0E"/>
+        <!-- Eyes -->
+        <circle cx="38" cy="64" r="4" fill="#2A1F0E"/>
+        <circle cx="54" cy="64" r="4" fill="#2A1F0E"/>
+        <circle cx="39.5" cy="62" r="1.8" fill="white"/>
+        <circle cx="55.5" cy="62" r="1.8" fill="white"/>
+        <!-- Big grin -->
+        <path d="M36 74 Q46 85 56 74" stroke="#2A1F0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M38 74 Q46 82 54 74" fill="#C0392B" opacity="0.3"/>
+        <!-- Cheeks -->
+        <circle cx="30" cy="72" r="7" fill="#F4CABB" opacity="0.45"/>
+        <circle cx="62" cy="72" r="7" fill="#F4CABB" opacity="0.45"/>
+        <!-- Nose -->
+        <circle cx="46" cy="70" r="2" fill="#F4CABB" opacity="0.8"/>
+        <!-- Item — kite in hand -->
+        <line x1="82" y1="138" x2="130" y2="60" stroke="#2A1F0E" stroke-width="1.2"/>
+        <g class="float-1">
+          <!-- Diamond kite -->
+          <path d="M130,60 L142,75 L130,95 L118,75Z" fill="#E8901A"/>
+          <path d="M130,60 L142,75 L130,78Z" fill="#C0392B" opacity="0.6"/>
+          <path d="M130,78 L118,75 L130,95Z" fill="#D4A017" opacity="0.6"/>
+          <!-- kite tail -->
+          <path d="M130 95 Q136 105 128 115 Q120 125 126 135" stroke="#E8901A" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+        </g>
+      </g>
+
+      <!-- Decorative bottom inscription -->
+      <text x="260" y="588" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="11" fill="white" opacity="0.4" letter-spacing="2">মাশাআল্লাহ ফ্যাশন হাউস · Dhaka</text>
+
+      <!-- Corner decorative spinning bloom -->
+      <g transform="translate(48,48)">
+        <g class="spin-slow" style="transform-origin:0px 0px;">
+          <circle r="18" fill="none" stroke="#D4A017" stroke-width="1" opacity="0.4"/>
+          <path d="M0,-18 L2,-10 L0,-13 L-2,-10Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M18,0 L10,2 L13,0 L10,-2Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M0,18 L-2,10 L0,13 L2,10Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M-18,0 L-10,-2 L-13,0 L-10,2Z" fill="#D4A017" opacity="0.5"/>
+        </g>
+      </g>
+      <g transform="translate(472,48)">
+        <g class="spin-slow" style="transform-origin:0px 0px;animation-direction:reverse;">
+          <circle r="18" fill="none" stroke="#D4A017" stroke-width="1" opacity="0.4"/>
+          <path d="M0,-18 L2,-10 L0,-13 L-2,-10Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M18,0 L10,2 L13,0 L10,-2Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M0,18 L-2,10 L0,13 L2,10Z" fill="#D4A017" opacity="0.5"/>
+          <path d="M-18,0 L-10,-2 L-13,0 L-10,2Z" fill="#D4A017" opacity="0.5"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="cat-nav">
+  <div class="cat-nav-inner">
+    <div class="cat-tab active">সব পণ্য</div>
+    <div class="cat-tab">০–১২ মাস</div>
+    <div class="cat-tab">১–৩ বছর</div>
+    <div class="cat-tab">৩–৬ বছর</div>
+    <div class="cat-tab">৬–১০ বছর</div>
+    <div class="cat-tab">১০–১৪ বছর</div>
+  </div>
+</div>
+
+<!-- DECORATIVE DIVIDER -->
+<div style="padding:28px 0 0;">
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-motif">✦ ✿ ✦</div>
+    <div class="divider-line"></div>
+  </div>
+</div>
+
+<!-- NEW IN -->
+<section class="reveal">
+  <div class="section-header">
+    <div>
+      <span class="section-title-bn">সর্বশেষ আগমন</span>
+      <h2 class="section-title">New <em>Arrivals</em></h2>
+    </div>
+    <a class="section-link">সব দেখুন →</a>
+  </div>
+  <div class="product-grid">
+
+    <!-- Product 1 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <div class="product-img-inner" style="background:#FDF0E6;">
+          <svg viewBox="0 0 130 175" width="88">
+            <path d="M30 88 Q65 72 100 88 L104 162 Q65 175 26 162Z" fill="#C0392B"/>
+            <path d="M30 88 L16 100 L20 130" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M100 88 L114 100 L110 130" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- kameez embroidery -->
+            <g fill="#FAD97A" opacity="0.8">
+              <circle cx="55" cy="110" r="3"/><circle cx="65" cy="103" r="3"/><circle cx="75" cy="110" r="3"/>
+              <circle cx="60" cy="120" r="2.5"/><circle cx="70" cy="120" r="2.5"/>
+            </g>
+            <path d="M46 85 Q65 79 84 85 L86 100 L44 100Z" fill="#E85444"/>
+            <circle cx="65" cy="62" r="26" fill="#FADADD"/>
+            <path d="M40 54 Q65 30 90 54 Q90 38 65 32 Q40 38 40 54Z" fill="#3D2910"/>
+            <circle cx="57" cy="60" r="3.5" fill="#2A1F0E"/>
+            <circle cx="73" cy="60" r="3.5" fill="#2A1F0E"/>
+            <circle cx="58.5" cy="58" r="1.5" fill="white"/>
+            <circle cx="74.5" cy="58" r="1.5" fill="white"/>
+            <path d="M57 70 Q65 78 73 70" stroke="#C0392B" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="68" r="6" fill="#F4CABB" opacity="0.5"/>
+            <circle cx="80" cy="68" r="6" fill="#F4CABB" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="prod-badge new">নতুন</div>
+        <div class="quick-add">🛍️ কার্টে যোগ করুন</div>
+      </div>
+      <div class="product-name">ফুলকি সালোয়ার কামিজ</div>
+      <div class="product-meta">মেয়ে · ৩–১০ বছর</div>
+      <div class="product-price">৳১,৮৫০</div>
+      <div class="swatches">
+        <div class="swatch" style="background:#C0392B;"></div>
+        <div class="swatch" style="background:#1C2B4A;"></div>
+        <div class="swatch" style="background:#2E8B57;"></div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <div class="product-img-inner" style="background:#EEF4F9;">
+          <svg viewBox="0 0 130 175" width="88">
+            <rect x="26" y="72" width="78" height="58" rx="7" fill="#1C2B4A"/>
+            <!-- panjabi lines -->
+            <rect x="26" y="72" width="78" height="12" fill="#2A3F6A"/>
+            <rect x="26" y="86" width="78" height="12" fill="#1C2B4A" opacity="0.7"/>
+            <!-- collar -->
+            <rect x="52" y="72" width="26" height="18" rx="3" fill="#2A3F6A"/>
+            <g fill="#D4A017" opacity="0.9">
+              <rect x="56" y="75" width="3" height="3"/><rect x="62" y="75" width="3" height="3"/>
+              <rect x="68" y="75" width="3" height="3"/>
+            </g>
+            <!-- pajama -->
+            <rect x="26" y="128" width="78" height="50" rx="4" fill="#0D1A30"/>
+            <path d="M26 100 Q12 112 16 140" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M104 100 Q118 112 114 140" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <circle cx="65" cy="52" r="26" fill="#FADADD"/>
+            <!-- topi -->
+            <ellipse cx="65" cy="30" rx="20" ry="7" fill="#2A3F6A"/>
+            <rect x="45" y="27" width="40" height="8" rx="2" fill="#1C2B4A"/>
+            <path d="M42 46 Q65 26 88 46 Q88 34 65 28 Q42 34 42 46Z" fill="#2A1F0E"/>
+            <circle cx="57" cy="55" r="3.5" fill="#2A1F0E"/>
+            <circle cx="73" cy="55" r="3.5" fill="#2A1F0E"/>
+            <circle cx="58.5" cy="53" r="1.5" fill="white"/>
+            <circle cx="74.5" cy="53" r="1.5" fill="white"/>
+            <path d="M56 66 Q65 76 74 66" stroke="#2A1F0E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="63" r="5" fill="#F4CABB" opacity="0.4"/>
+            <circle cx="80" cy="63" r="5" fill="#F4CABB" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="prod-badge new">নতুন</div>
+        <div class="quick-add">🛍️ কার্টে যোগ করুন</div>
+      </div>
+      <div class="product-name">ঐতিহ্যবাহী পাঞ্জাবি সেট</div>
+      <div class="product-meta">ছেলে · ২–১২ বছর</div>
+      <div class="product-price">৳২,২০০</div>
+      <div class="swatches">
+        <div class="swatch" style="background:#1C2B4A;"></div>
+        <div class="swatch" style="background:#C0392B;"></div>
+        <div class="swatch" style="background:#2E8B57;"></div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <div class="product-img-inner" style="background:#F0F8F4;">
+          <svg viewBox="0 0 130 175" width="88">
+            <path d="M38 80 Q65 65 92 80 L96 150 Q65 162 34 150Z" fill="#2E8B57"/>
+            <!-- embroidery dots -->
+            <g fill="#FAD97A" opacity="0.7">
+              <circle cx="55" cy="100" r="3"/><circle cx="65" cy="93" r="3"/><circle cx="75" cy="100" r="3"/>
+              <circle cx="58" cy="112" r="2.5"/><circle cx="72" cy="112" r="2.5"/>
+              <circle cx="65" cy="124" r="3"/>
+            </g>
+            <path d="M38 80 L24 92 L28 122" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M92 80 L106 92 L102 122" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <circle cx="65" cy="57" r="28" fill="#FADADD"/>
+            <path d="M38 50 Q65 26 92 50 Q92 36 65 30 Q38 36 38 50Z" fill="#5A3D20"/>
+            <circle cx="57" cy="57" r="3.5" fill="#2A1F0E"/>
+            <circle cx="73" cy="57" r="3.5" fill="#2A1F0E"/>
+            <circle cx="58.5" cy="55" r="1.5" fill="white"/>
+            <circle cx="74.5" cy="55" r="1.5" fill="white"/>
+            <path d="M57 68 Q65 76 73 68" stroke="#2E8B57" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="66" r="6" fill="#F4CABB" opacity="0.5"/>
+            <circle cx="80" cy="66" r="6" fill="#F4CABB" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="prod-badge" style="background:#1A5C3A;">ঈদ</div>
+        <div class="quick-add">🛍️ কার্টে যোগ করুন</div>
+      </div>
+      <div class="product-name">ঈদ স্পেশাল কামিজ</div>
+      <div class="product-meta">মেয়ে · ৪–১২ বছর</div>
+      <div class="product-price">৳২,৪৫০</div>
+      <div class="swatches">
+        <div class="swatch" style="background:#2E8B57;"></div>
+        <div class="swatch" style="background:#E8901A;"></div>
+        <div class="swatch" style="background:#C0392B;"></div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <div class="product-img-inner" style="background:#FEF7E6;">
+          <svg viewBox="0 0 130 175" width="88">
+            <!-- baby suit -->
+            <path d="M32 82 Q65 68 98 82 L102 155 Q65 168 28 155Z" fill="#E8901A"/>
+            <path d="M32 82 L18 94 L22 124" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M98 82 L112 94 L108 124" stroke="#FADADD" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <!-- stars decoration -->
+            <text x="48" y="115" font-size="12" fill="white" opacity="0.7">★</text>
+            <text x="65" y="128" font-size="10" fill="white" opacity="0.5">★</text>
+            <text x="78" y="112" font-size="8" fill="white" opacity="0.6">★</text>
+            <circle cx="65" cy="58" r="28" fill="#FADADD"/>
+            <path d="M40 50 Q65 26 90 50 Q90 36 65 30 Q40 36 40 50Z" fill="#8B5E3C"/>
+            <circle cx="57" cy="58" r="3.5" fill="#2A1F0E"/>
+            <circle cx="73" cy="58" r="3.5" fill="#2A1F0E"/>
+            <circle cx="58.5" cy="56" r="1.5" fill="white"/>
+            <circle cx="74.5" cy="56" r="1.5" fill="white"/>
+            <!-- tiny open mouth smile for baby -->
+            <path d="M58 68 Q65 76 72 68" stroke="#2A1F0E" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="51" cy="66" r="7" fill="#F4CABB" opacity="0.5"/>
+            <circle cx="79" cy="66" r="7" fill="#F4CABB" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="prod-badge sale">সেল</div>
+        <div class="quick-add">🛍️ কার্টে যোগ করুন</div>
+      </div>
+      <div class="product-name">তারার আলো বেবি সেট</div>
+      <div class="product-meta">শিশু · ০–২৪ মাস</div>
+      <div class="product-price"><span class="old">৳১,৮০০</span>৳১,৩৯০</div>
+      <div class="swatches">
+        <div class="swatch" style="background:#E8901A;"></div>
+        <div class="swatch" style="background:#F4CABB;"></div>
+        <div class="swatch" style="background:#C5DFF0;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="feature-strip-inner">
+    <div class="feature-item"><span class="feature-icon">🌿</span><div class="feature-text"><h4>নরম কাপড়</h4><p>শিশুর ত্বকের জন্য নিরাপদ</p></div></div>
+    <div class="feature-item"><span class="feature-icon">🚚</span><div class="feature-text"><h4>দ্রুত ডেলিভারি</h4><p>ঢাকায় ১ দিন, সারাদেশে ৩ দিন</p></div></div>
+    <div class="feature-item"><span class="feature-icon">🔄</span><div class="feature-text"><h4>সহজ রিটার্ন</h4><p>৭ দিনের মধ্যে রিটার্ন করুন</p></div></div>
+    <div class="feature-item"><span class="feature-icon">💬</span><div class="feature-text"><h4>WhatsApp সাপোর্ট</h4><p>০১৯০৯-১৬৫৫৩৩</p></div></div>
+  </div>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<div style="padding:32px 0 16px;">
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-motif">❋ ◈ ❋</div>
+    <div class="divider-line"></div>
+  </div>
+</div>
+
+<!-- SHOP BY CATEGORY -->
+<section class="reveal">
+  <div class="section-header">
+    <div>
+      <span class="section-title-bn">ক্যাটাগরি অনুযায়ী কিনুন</span>
+      <h2 class="section-title">Shop by <em>Category</em></h2>
+    </div>
+  </div>
+  <div class="category-grid">
+    <div class="cat-card cat-card-tall" style="grid-row:span 2;">
+      <div class="cat-card-bg" style="background:linear-gradient(160deg,#E8901A,#C0392B,#8B1E1E);min-height:100%;">
+        <div class="cat-overlay"></div>
+        <!-- motif pattern -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.12;" viewBox="0 0 200 400"><g fill="none" stroke="white" stroke-width="1"><circle cx="100" cy="200" r="80"/><circle cx="100" cy="200" r="50"/><path d="M100 120 L108 144 L100 135 L92 144Z"/><path d="M180 200 L156 208 L165 200 L156 192Z"/><path d="M100 280 L92 256 L100 265 L108 256Z"/><path d="M20 200 L44 192 L35 200 L44 208Z"/></g></svg>
+        <div class="cat-info"><h3>মেয়ে</h3><p>১৩৫+ ডিজাইন</p></div>
+      </div>
+    </div>
+    <div class="cat-right">
+      <div class="cat-card cat-card-sq">
+        <div class="cat-card-bg" style="background:linear-gradient(135deg,#1C2B4A,#2A3F6A);min-height:220px;">
+          <div class="cat-overlay"></div>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.1;" viewBox="0 0 200 200"><circle cx="100" cy="100" r="60" fill="none" stroke="white" stroke-width="1.5"/><circle cx="100" cy="100" r="35" fill="none" stroke="white" stroke-width="1"/></svg>
+          <div class="cat-info"><h3>ছেলে</h3><p>৯৮+ ডিজাইন</p></div>
+        </div>
+      </div>
+      <div class="cat-card cat-card-sq">
+        <div class="cat-card-bg" style="background:linear-gradient(135deg,#1A5C3A,#2E8B57);min-height:220px;">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h3>শিশু</h3><p>৮০+ ডিজাইন</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="cat-right">
+      <div class="cat-card cat-card-sq">
+        <div class="cat-card-bg" style="background:linear-gradient(135deg,#D4A017,#E8901A);min-height:220px;">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h3>সেট</h3><p>৫৫+ কম্বো</p></div>
+        </div>
+      </div>
+      <div class="cat-card cat-card-sq">
+        <div class="cat-card-bg" style="background:linear-gradient(135deg,#5A3D20,#8B5E3C);min-height:220px;">
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><h3>ঈদ কালেকশন</h3><p>বিশেষ সংগ্রহ</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+  <div class="testimonials-inner reveal">
+    <div class="section-header">
+      <div>
+        <span class="section-title-bn">মায়েদের মতামত</span>
+        <h2 class="section-title">Happy <em>Mothers</em></h2>
+      </div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"অসাধারণ কোয়ালিটি! আমার মেয়ে এই পোশাক পরে স্কুলে গিয়েছে, সবাই প্রশংসা করেছে। ডেলিভারিও অনেক দ্রুত ছিল।"</p>
+        <div class="testi-author">— রাহেলা বেগম, মিরপুর</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"ঈদের জন্য ছেলের পাঞ্জাবি নিয়েছিলাম। একদম পারফেক্ট ফিট, কাপড়ও নরম। আবার অর্ডার করব ইনশাআল্লাহ।"</p>
+        <div class="testi-author">— নাজমা আক্তার, উত্তরা</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">"শিশুর জন্য রমজানের স্পেশাল সেট নিয়েছিলাম। রঙ একদম সুন্দর, ওয়াশ করার পরেও নষ্ট হয়নি। দাম একটু বেশি হলেও মানের সাথে মেলে।"</p>
+        <div class="testi-author">— সালমা খানম, নারায়ণগঞ্জ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-strip">
+  <div class="about-inner reveal">
+    <div class="about-text">
+      <span class="about-title-bn">আমাদের সম্পর্কে</span>
+      <h2>Made with <em>Love,</em><br/>Worn with Joy</h2>
+      <p>মাশাআল্লাহ ফ্যাশন হাউস — ঢাকার মিরপুর থেকে শুরু হওয়া একটি ছোট্ট স্বপ্ন। আমরা বিশ্বাস করি প্রতিটি শিশু সেরা পোশাক পাওয়ার যোগ্য।</p>
+      <p>আমাদের প্রতিটি পোশাক তৈরি হয় নরম, টেকসই কাপড়ে — যা আপনার সোনামণির ত্বকের জন্য আরামদায়ক এবং দেখতেও সুন্দর।</p>
+      <button class="about-btn">আমাদের গল্প জানুন</button>
+    </div>
+    <div class="about-values">
+      <div class="about-value">
+        <div class="about-value-icon">🧵</div>
+        <div><h4>উন্নত কাপড়</h4><p>নরম সুতি ও মিশ্র কাপড়, শিশুর ত্বকের জন্য উপযুক্ত।</p></div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon">🎨</div>
+        <div><h4>বাংলাদেশি ডিজাইন</h4><p>আমাদের নিজস্ব ডিজাইনাররা প্রতিটি পোশাক ডিজাইন করেন।</p></div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon">🚀</div>
+        <div><h4>দ্রুত ডেলিভারি</h4><p>সারাদেশে হোম ডেলিভারি, ঢাকায় ২৪ ঘণ্টার মধ্যে।</p></div>
+      </div>
+      <div class="about-value">
+        <div class="about-value-icon">💯</div>
+        <div><h4>১০০% সন্তুষ্টি গ্যারান্টি</h4><p>পোশাক পছন্দ না হলে সহজেই রিটার্ন করুন।</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner reveal">
+    <span class="nl-ornament">◈ ◈ ◈</span>
+    <h2>নতুন কালেকশনের <em>খবর</em> পান</h2>
+    <p class="newsletter-bn">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন — বিশেষ ছাড় ও নতুন ডিজাইনের আপডেট পাবেন সবার আগে।</p>
+    <div class="nl-form">
+      <input class="nl-input" type="email" placeholder="আপনার ইমেইল লিখুন..."/>
+      <button class="nl-btn">সাবস্ক্রাইব</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-brand-name">মাশাআল্লাহ ফ্যাশন হাউস</span>
+      <span class="footer-brand-sub">Mashallah Fashion House · Since 2020</span>
+      <p>মিরপুর, ঢাকা থেকে পরিচালিত। শিশুর পোশাকে আমরা বিশ্বাস করি মানের সাথে কোনো আপোষ নেই।</p>
+      <div class="footer-social">
+        <div class="social-btn" title="Facebook">f</div>
+        <div class="social-btn" title="WhatsApp">w</div>
+        <div class="social-btn" title="Instagram">ig</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>পণ্য</h5>
+      <a>নতুন পণ্য</a><a>মেয়েদের পোশাক</a><a>ছেলেদের পোশাক</a>
+      <a>শিশুর পোশাক</a><a>সেট কালেকশন</a><a>সেল</a>
+    </div>
+    <div class="footer-col">
+      <h5>সাহায্য</h5>
+      <a>সাইজ গাইড</a><a>ডেলিভারি তথ্য</a>
+      <a>রিটার্ন পলিসি</a><a>কেয়ার গাইড</a><a>FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h5>যোগাযোগ</h5>
+      <a>📞 ০১৯০৯-১৬৫৫৩৩</a>
+      <a>📍 মিরপুর-১, ঢাকা-১২১৬</a>
+      <a>🕐 সর্বদা খোলা</a>
+      <a>💬 WhatsApp করুন</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© ২০২৬ মাশাআল্লাহ ফ্যাশন হাউস। সকল অধিকার সংরক্ষিত।</p>
+    <p>Made with ♡ in Dhaka, Bangladesh 🇧🇩</p>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      observer.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08});
+reveals.forEach(r => observer.observe(r));
+
+// ── Category tabs
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── Nav active state
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── Cart counter (simple demo)
+let cartCount = 0;
+document.querySelectorAll('.quick-add').forEach(btn => {
+  btn.addEventListener('click', () => {
+    cartCount++;
+    document.querySelector('.cart-count').textContent = cartCount;
+    btn.textContent = '✓ যোগ হয়েছে!';
+    btn.style.background = 'rgba(46,139,87,0.95)';
+    setTimeout(() => {
+      btn.textContent = '🛍️ কার্টে যোগ করুন';
+      btn.style.background = '';
+    }, 1500);
+  });
+});
+
+// ── Newsletter submit
+document.querySelector('.nl-btn').addEventListener('click', () => {
+  const inp = document.querySelector('.nl-input');
+  if(inp.value){
+    inp.value = '';
+    inp.placeholder = '✓ সফলভাবে সাবস্ক্রাইব হয়েছেন!';
+    setTimeout(() => inp.placeholder = 'আপনার ইমেইল লিখুন...', 3000);
+  }
+});
+
+// ── Subtle header shadow on scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  header.style.boxShadow = window.scrollY > 10
+    ? '0 4px 30px rgba(42,31,14,0.15)'
+    : '0 2px 20px rgba(42,31,14,0.08)';
+});
+</script>
+</body>
+</html>
